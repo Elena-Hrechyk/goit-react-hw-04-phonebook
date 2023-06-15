@@ -31,13 +31,13 @@ export class App extends Component {
   formSubmit = data => {
     data.id = nanoid(5); // уникальний id контакта
 
-    const newContact = data.name.toLowerCase();
+    const newContact = data.username.toLowerCase();
     const checkContact = this.state.contacts.some(
-      item => item.name.toLowerCase() === newContact
+      item => item.username.toLowerCase() === newContact
     );
 
     if (checkContact) {
-      return alert(`${data.name} is already in contacts`);
+      return alert(`${data.username} is already in contacts`);
     }
 
     this.setState(({ contacts }) => ({
@@ -59,11 +59,12 @@ export class App extends Component {
     const { contacts, filter } = this.state;
     const filterNorm = filter.toLowerCase();
     return contacts.filter(item =>
-      item.name.toLowerCase().includes(filterNorm)
+      item.username.toLowerCase().includes(filterNorm)
     );
   }
 
   render() {
+    console.log(this.state);
     const { filter, contacts } = this.state;
     const filterContacts = this.getFilterContact();
 

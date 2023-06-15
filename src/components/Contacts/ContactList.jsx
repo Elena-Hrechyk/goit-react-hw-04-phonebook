@@ -14,7 +14,7 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
           return (
             <ItemContact key={item.id}>
               <InfoContact>
-                {item.name}: {item.number}
+                {item.username}: {item.number}
               </InfoContact>
               <BtnDelContact
                 type="button"
