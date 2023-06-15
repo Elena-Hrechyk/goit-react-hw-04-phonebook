@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import css from './Form.module.css';
+import { Form, Lable, Input, BtnAddContact } from './Form.styled';
 
-export class Form extends Component {
+export class FormContact extends Component {
   state = {
     name: '',
     number: '',
@@ -23,13 +23,12 @@ export class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSumnit} className={css.form}>
-        <label className={css.label}>
+      <Form onSubmit={this.handleSumnit}>
+        <Lable>
           Name
-          <input
+          <Input
             type="text"
             name="name"
-            className={css.input}
             value={this.state.name}
             onChange={this.onInputChange}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -38,13 +37,12 @@ export class Form extends Component {
             autoFocus
             required
           />
-        </label>
-        <label className={css.label}>
+        </Lable>
+        <Lable>
           Number
-          <input
+          <Input
             type="tel"
             name="number"
-            className={css.input}
             value={this.state.number}
             onChange={this.onInputChange}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -52,11 +50,9 @@ export class Form extends Component {
             placeholder="380671234567"
             required
           />
-        </label>
-        <button type="submit" className={css.buttonAdd}>
-          Add contact
-        </button>
-      </form>
+        </Lable>
+        <BtnAddContact type="submit">Add contact</BtnAddContact>
+      </Form>
     );
   }
 }

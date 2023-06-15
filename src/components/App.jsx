@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from './Form/Form';
+import { FormContact } from './Form/Form';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './Contacts/ContactList';
 import { nanoid } from 'nanoid';
@@ -77,7 +77,7 @@ export class App extends Component {
         >
           Phonebook
         </h2>
-        <Form onSubmit={this.formSubmit} />
+        <FormContact onSubmit={this.formSubmit} />
         <h3
           style={{
             marginTop: 20,
