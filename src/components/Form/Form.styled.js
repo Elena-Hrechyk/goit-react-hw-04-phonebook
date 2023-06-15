@@ -1,4 +1,6 @@
-.form {
+import styled from '@emotion/styled';
+
+export const Form= styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -8,25 +10,25 @@
   margin-left: 40px;
   border: 1px solid rgba(161, 165, 161, 0.397);
   border-radius: 8px;
-}
+`;
 
-/* .label {
+export const Lable = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 700;
-} */
+`;
 
-.input {
+export const Input = styled.input`
   margin-top: 10px;
   padding: 10px;
   font-size: 14px;
   font-weight: 700;
   border-radius: 8px;
-}
+`;
 
-/* .buttonAdd {
+export const BtnAddContact = styled.button`
   width: 150px;
   display: block;
   margin-left: auto;
@@ -41,10 +43,9 @@
   border-radius: 10px;
   border: 1px solid rgba(161, 165, 161, 0.397);
   transition: color 250ms linear, background-color 250ms linear;
-}
-
-.buttonAdd:hover,
-.buttonAdd:focus {
-  color: aliceblue;
-  background-color: #4468df;
-} */
+  &:hover,
+  &:focus {
+    color: aliceblue;
+    background-color: #4468df;
+  }
+`;
