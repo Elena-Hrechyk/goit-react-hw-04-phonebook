@@ -64,7 +64,7 @@ export class App extends Component {
   }
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
     const filterContacts = this.getFilterContact();
 
     return (
@@ -78,19 +78,26 @@ export class App extends Component {
           Phonebook
         </h2>
         <FormContact onSubmit={this.formSubmit} />
-        <h3
-          style={{
-            marginTop: 20,
-            marginLeft: 40,
-          }}
-        >
-          Contacts
-        </h3>
-        <Filter filter={filter} onSearchContact={this.filterContact} />
-        <ContactList
-          contacts={filterContacts}
-          onDeleteContact={this.deleteContact}
-        />
+
+        {!contacts.length ? (
+          <h3
+            style={{
+              marginTop: 20,
+              marginLeft: 40,
+            }}
+          >
+            No saved contacts
+          </h3>
+        ) : (
+          <>
+            <h3 style={{ marginTop: 20, marginLeft: 40 }}>Contacts</h3>
+            <Filter filter={filter} onSearchContact={this.filterContact} />
+            <ContactList
+              contacts={filterContacts}
+              onDeleteContact={this.deleteContact}
+            />
+          </>
+        )}
       </>
     );
   }
